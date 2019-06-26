@@ -1,0 +1,7 @@
+[package]
+name = "mem_manage"
+version = "0.1.0"
+authors = ["Jiku Hamamoto <hamamoto@swlab.cs.okayama-u.ac.jp>"]
+edition = "2018"
+
+[dependencies]
