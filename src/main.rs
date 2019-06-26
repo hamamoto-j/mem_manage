@@ -14,6 +14,11 @@ impl birthday {
         println!("DATE : {}-{}-{}", &self.year, &self.month, &self.day);
     }
 
+    fn to_vec(&self) -> Vec<u32>{
+        let v : Vec<u32>= vec![self.year, self.month, self.day];
+        v
+    }
+
 }
 
 struct mem_list{
@@ -181,7 +186,7 @@ fn list_sort(list: &mut Vec<mem_list>, num: usize){
     match num{
     1 => list.sort_by(|a, b|a.id.cmp(&b.id)),
     2 => list.sort_by(|a, b|a.name.cmp(&b.name)),
-    3 => list.sort_by(|a, b|(a.date.year,a.date.month,a.date.day).cmp(&(b.date.year,b.date.month,b.date.day)) ),
+    3 => list.sort_by(|a, b|a.date.to_vec().cmp(&b.date.to_vec())),
     4 => list.sort_by(|a, b|a.address.cmp(&b.address)),
     5 => list.sort_by(|a, b|a.comment.cmp(&b.comment)),
     _ => {println!("Invalid argument.");}
